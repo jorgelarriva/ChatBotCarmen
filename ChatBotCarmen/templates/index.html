@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat con Carmen</title>
+    <link rel="icon" type="image/png" href="/static/foto/Logo.png">
+	<link rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
+</head>
+
+<body>
+	<header>
+        <h1 class="visually-hidden">Chat con Carmen - Influencer Virtual</h1>
+    </header>
+	<main>
+		<div id="contenido">
+			<div id="video-container">
+				<img id="esperando" class="gif-estado activo" src="/static/video/Esperando.gif" alt="Esperando">
+				<img id="pensando" class="gif-estado" src="/static/video/Pensando.gif" alt="Pensando">
+				<img id="hablando" class="gif-estado" src="/static/video/Hablando.gif" alt="Hablando">
+
+				<div id="carmen-info">
+					<h2>Carmen</h2>
+					<p><strong>Edad virtual:</strong> 24 años</p>
+					<p><strong>Profesión:</strong> Influencer Virtual y Creadora de contenido</p>
+					<p id="estado-carmen">Estado: Esperando tu mensaje ⌛...</p>
+				</div>
+
+				<div class="audio-label">Opciones</div>
+				<div id="audio-toggle">
+					<input type="checkbox" id="toggle-audio" checked>
+					<label for="toggle-audio">🔊 Audio activado</label>
+				</div>
+				<div id="tema-toggle">
+					<input type="checkbox" id="toggle-tema">
+					<label for="toggle-tema">🌙 Modo oscuro</label>
+				</div>
+			</div>
+
+			<div id="chat-container">
+				<h1 style="margin-bottom: 5px;">💃🏽 Chat con Carmen</h1>
+				<div class="subtitulo">Influencer Virtual</div>
+
+				<div id="chat-log"></div>
+				<label for="user-input" class="visually-hidden">Escribe tu mensaje</label>
+				<input id="user-input" type="text" placeholder="Escribe algo...">
+				<button id="enviar-btn" onclick="enviar()" disabled><strong>Enviar</strong></button>
+			</div>
+		</div>
+	</main>
+	
+	<footer>
+        <p class="visually-hidden">Pie de página</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
